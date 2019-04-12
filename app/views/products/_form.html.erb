@@ -25,6 +25,22 @@
     <%= form.label :active %>
     <%= form.check_box :active %>
   </div>
+  
+  <div>
+    <h1>Choose add-on for the Product</h1>
+    <div class="field">
+     Extra meal voucher:
+     <%= check_box_tag 'product[voucher]', 'voucher' %>
+    </div>
+<div class="field">
+     Coke
+    <%= check_box_tag 'product[coke]', 'coke' %>
+</div>
+<div class="field">
+     Extra Topings:
+  <%= check_box_tag 'product[toppings]', 'toppings' %>
+</div>
+</div>
 
   <div class="actions">
     <%= form.submit %>

@@ -15,4 +15,9 @@ private
   def update_subtotal
     self[:subtotal] = subtotal
   end
+  
+  def order_status
+    super || NullOrder.new
+  end
+  
 end

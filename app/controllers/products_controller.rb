@@ -1,4 +1,4 @@
- class ProductsController < ApplicationController
+class ProductsController < ApplicationController
        before_action :set_product, only: [:show, :edit, :update, :destroy]
        before_action :authenticate_user!
  # GET /products
@@ -26,6 +26,21 @@
   # POST /products.json
   def create
     @product = Product.new(product_params)
+
+    product_decorated = BasicOrderDecorator.new(@product)
+    
+    if params[:product][:voucher].to_s.length > 0 then
+        product_decorated = ExtraMealVoucherOrderDecorator.new(@product)
+    end
+    if params[:product][:coke].to_s.length > 0 then
+        product_decorated = CokeOrderDecorator.new(@product)
+    end
+    if params[:product][:toppings].to_s.length > 0 then
+       product_decorated = ToppingOrderDecorator.new(@product)
+    end
+     
+     @product.name =  "#{@product.name} #{product_decorated.getOrderExtraAdded}"
+     @product.price =  @product.price + product_decorated.getOrderPrice
 
     respond_to do |format|
       if @product.save
