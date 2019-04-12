@@ -18,7 +18,7 @@
       <%= link_to "(#{current_order.order_items.size}) ", cart_path, class: "navbar-brand glyphicon glyphicon-shopping-cart" %>
       <%= link_to ''+ current_user.email , destroy_user_session_path,class:'navbar-brand glyphicon glyphicon-off',:method => :delete %>
       <%else%>
-      <%= link_to ' Login',login_index_path, class: 'navbar-brand glyphicon glyphicon-log-in' %>
+      
       <%end%>
       
 </nav>
