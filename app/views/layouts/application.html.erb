@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShoppingCartExample</title>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <% if request.ssl? %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+  <% else %>
+    <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+  <% end %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to "Home", root_path, class: 'navbar-brand' %>
+      <%= link_to 'Order History', order_histories_path, class: 'navbar-brand glyphicon glyphicon-time' %>
+     
+</nav>
+  <%= csrf_meta_tags %>
+</head>
+<body background='https://cdn.steemitimages.com/DQma9bjX9K2q6JYuMQRwfVWKWQYhGLsSEmwKH5NkBnZA3jq/9f9913628bd4ccb5d79b2fc51f45d5a6.jpg'>
+      <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        
+      </div>
+      <% if user_signed_in? %>
+      <div class="col-xs-6 text-right">
+        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+        <%end%>
+      </div>
+    </div>
+    <hr>
+    <%= yield %>
+  </div>
+<% if user_signed_in? %>
+<div>Signed in as... <%= current_user.email %>
+(<%= link_to 'Sign out', destroy_user_session_path, data: { confirm: 'You will lose items in the cart if you logout. Are you sure ?' }, :method => :delete =%>)
+<% if current_user.admin?%>
+<%= link_to 'New Product', new_product_path ,class:'btn '%>
+<%end%>
+</div>
+<% else %>
+
+<%= link_to 'Register', new_user_registration_path %> or
+<%= link_to 'Sign in', new_user_session_path %>
+<% end %>
+
+</body>
+</html>

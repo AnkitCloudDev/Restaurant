@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<p id="notice"><%= notice %></p>
+<body bakground='https://img.etimg.com/thumb/msid-65511444,width-643,imgsize-487093,resizemode-4/food-eat-bbq-meat-gettyimages-673139382.jpg'>
+<h1>Menu</h1>
+
+<h3 class="text-center">We provide a full range of meals for your Hunger</h3>
+
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <% @products.each do |product| %>
+      <%= render "product_row", product: product, order_item: @order_item %>
+    <% end %>
+  </div>
+</div>
+
+</body>
+</html>
