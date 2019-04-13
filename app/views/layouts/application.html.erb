@@ -2,6 +2,7 @@
 <html>
   <meta name="detectify-verification"content="9702328a8abd87d7f22373384cab77d5" />
 <head>
+  <a href="https://seal.beyondsecurity.com/vulnerability-scanner-verification/glacial-shore-22719.herokuapp.com"><img src="https://seal.beyondsecurity.com/verification-images/glacial-shore-22719.herokuapp.com/vulnerability-scanner-2.gif" alt="Website Security Test" border="0"></a>
   <meta name="5adc5091949e5a61051bb6e36380fa8bba48a386" content="76716b495602f2d1e62dde89f2a92fac43740f05" />
   <title>ShoppingCartExample</title>
   <%= javascript_include_tag 'application',integrity: true, 'data-turbolinks-track' => true %>
@@ -48,9 +49,7 @@
     <%= yield %>
   </div>
 <% if user_signed_in? %>
-<div>Signed in as... <%= current_user.email %>
-(<%= link_to 'Sign out', destroy_user_session_path, data: { confirm: 'You will lose items in the cart if you logout. Are you sure ?' }, :method => :delete =%>)
-<% if current_user.admin?%>
+ <% if current_user.admin?%>
 <%= link_to 'New Product', new_product_path ,class:'btn '%>
 <%end%>
 </div>
@@ -61,6 +60,6 @@
 <% end %>
 <meta name="5adc5091949e5a61051bb6e36380fa8bba48a386" content="76716b495602f2d1e62dde89f2a92fac43740f05" />
 <meta name="detectify-verification"content="9702328a8abd87d7f22373384cab77d5" />
-<a href="https://seal.beyondsecurity.com/vulnerability-scanner-verification/glacial-shore-22719.herokuapp.com"><img src="https://seal.beyondsecurity.com/verification-images/glacial-shore-22719.herokuapp.com/vulnerability-scanner-2.gif" alt="Website Security Test" border="0"></a>
+
 </body>
 </html>

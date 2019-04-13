@@ -10,13 +10,12 @@
   <div class="container">
     <div class="navbar-header">
       <%= link_to "Charlie's Snack Bar", root_path, class: 'navbar-brand' %>
-    
-      
+          <% if user_signed_in? %>
+            
       <%= link_to 'Profiles', Profile, class: 'navbar-brand glyphicon glyphicon-user' %>
       <%= link_to 'Order-History', order_histories_path, class: 'navbar-brand glyphicon glyphicon-time' %>
-      <% if user_signed_in? %>
       <%= link_to "(#{current_order.order_items.size}) ", cart_path, class: "navbar-brand glyphicon glyphicon-shopping-cart" %>
-      <%= link_to ''+ current_user.email , destroy_user_session_path,class:'navbar-brand glyphicon glyphicon-off',:method => :delete %>
+      <%= link_to ''+ current_user.email , destroy_user_session_path, data: { confirm: 'You will lose items in the cart if you logout. Are you sure ?' },class:'navbar-brand glyphicon glyphicon-off',:method => :delete %>
       <%else%>
       
       <%end%>

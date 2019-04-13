@@ -10,4 +10,4 @@ class CartObserver < ActiveRecord::Observer
 #	  
   end
  # end
-end
+en
