@@ -27,7 +27,7 @@ config.action_mailer.default_url_options = { host: ENV['IP'],port: ENV['PORT'] }
     config.cache_store = :null_store
   end
  config.force_ssl = true
- config.ssl_options = {  redirect: { status: 302, port: 81 } }
+ config.ssl_options = {  redirect: { status: 302, port: 81 }}
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 config.active_record.observers= :cart_observer
