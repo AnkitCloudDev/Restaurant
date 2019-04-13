@@ -5,12 +5,12 @@
   <meta name="5adc5091949e5a61051bb6e36380fa8bba48a386" content="76716b495602f2d1e62dde89f2a92fac43740f05" />
   <title>ShoppingCartExample</title>
   <%= javascript_include_tag 'application',integrity: true, 'data-turbolinks-track' => true %>
+ 
   <% if request.ssl? %>
-    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-    <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js',integrity: true %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <% else %>
-    <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-    <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js',integrity: true %>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <% end %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -25,6 +25,10 @@
  <meta name="detectify-verification"content="9702328a8abd87d7f22373384cab77d5" />
 </head>
 <body background='https://cdn.steemitimages.com/DQma9bjX9K2q6JYuMQRwfVWKWQYhGLsSEmwKH5NkBnZA3jq/9f9913628bd4ccb5d79b2fc51f45d5a6.jpg'>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <meta name="detectify-verification"content="9702328a8abd87d7f22373384cab77d5" />
       <header>
       <%= render 'layouts/navigation' %>
