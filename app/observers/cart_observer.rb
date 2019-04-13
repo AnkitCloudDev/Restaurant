@@ -3,10 +3,10 @@ class CartObserver < ActiveRecord::Observer
  
   def after_update(order)
  puts("observer called----------------<><><><><>?<<><><><><><><>--------------")  
- #@user=User.find(user_id)
- # if(trip.previous_changes.any?)
-#		  UserMailer.trip_update(trip,@user).deliver
+ @user=User.find(current_user.id)
+ if(order.previous_changes.any?)
+	  ApplicationMailer.send_observer_mail(@user).deliver
 		  
- # end
+ end
   end
 end
