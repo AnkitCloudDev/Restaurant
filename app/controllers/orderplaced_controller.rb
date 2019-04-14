@@ -1,6 +1,6 @@
 class OrderplacedController < ApplicationController
     before_action :authenticate_user!
-    
+    #Used to show that order has been placed and orderhistory is saved
     def show
          @order_items = current_order.order_items
          
@@ -18,6 +18,7 @@ class OrderplacedController < ApplicationController
          @order_history.save
          @order_item.destroy
      end
+     #mail is sent to user after every successful purchase
         ApplicationMailer.send_cart_mail(current_user).deliver
     end
 end

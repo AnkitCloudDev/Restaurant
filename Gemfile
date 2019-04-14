@@ -9,6 +9,7 @@ gem 'rails', '~> 5.2.3'
 gem 'rails-observers'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'devise'
+gem 'rails-i18n', '~> 5.1'
 gem 'jquery-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'

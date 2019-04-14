@@ -15,7 +15,7 @@ private
   def update_subtotal
     self[:subtotal] = subtotal
   end
-  
+  # Added Null design Pattern
   def order_status
     super || NullOrder.new
   end

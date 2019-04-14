@@ -8,7 +8,7 @@ class BasicOrderDecorator
 	 def getOrderPrice
 		return 0.00
 	 end	
-	
+	#added 0.0 cost if basic order is chosen
 	def getOrderExtraAdded
 		return @extra_added   
 	end	
