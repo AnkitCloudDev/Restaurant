@@ -1,24 +1,41 @@
 # README
+Step1: Download Ruby on your local machine or use AWS Cloud 9 as it provides Ruby on Rails development Support. Follow the link for installing and setting up Ruby on Rails on windows machine:
+https://gorails.com/setup/windows/10
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Step 2 :Download and Extract the Code
 
-Things you may want to cover:
+Step 3: Navigate to the SnackBar folder 
 
-* Ruby version
+Step 4: Install dependenices using the following Command:
+bundle install
 
-* System dependencies
+Step 5: Open the development.rb file located in config->environments folder and Add the corresponding content
+as one single line! to the development.rb file
+ FOR LOCALHOST: 
+config.action_mailer.default_url_options = { host: 'localhost',port: 3000 }
+For  Cloud9:
+config.action_mailer.default_url_options = { host: ENV['IP'],port: ENV['PORT'] }
 
-* Configuration
+Step 6: Start Rails server using the command :
+Rails server
 
-* Database creation
+For deployment on Heroku:
 
-* Database initialization
+Step 1:(Assuming you have heroku and git cli installed)
+git init
 
-* How to run the test suite
+Step 2: Login to heroku
+heroku login -i
 
-* Services (job queues, cache servers, search engines, etc.)
+step 3: To add files to git repo
+git add .
 
-* Deployment instructions
+step 4: To commit changes 
+git commit -m "Message"
 
-* ...
+Step 5: To create a Heroku domain
+heroku create 
+
+Step 6: Push the repository to heroku
+git push heroku master
+

@@ -1,10 +1,10 @@
 class ProfileObserver < ActiveRecord::Observer
- observe :order_history
+ observe :profile
  	#observe the cart and take action depending upon order_hisotry
-  def after_update(order_history)
+  def after_update(profile)
    
   puts("observer called----------------<><><><><>?<<><><><><><><>--------------")  
-     @user=User.find(order_history.user_id)
+     @user=User.find(profile.user_id)
     if(profile.changes.any?)
     ApplicationMailer.send_observer_mail(@user).deliver
   
